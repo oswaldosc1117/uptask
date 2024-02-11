@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.olvidar{
+    margin-top: 4rem;
+
+    .uptask{
+        @include m.texto-degradado(v.$rosa);
+    }
+
+    input[type="submit"]{
+        @include m.boton(v.$rosa, v.$blanco);
+    }
+
+    .acciones{
+        a:hover{
+            color: v.$rosa;
+        }
+
+    }
+}

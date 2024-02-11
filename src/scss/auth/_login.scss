@@ -1,0 +1,29 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.login{
+    margin-top: 4rem;
+
+    .uptask{
+        @include m.texto-degradado(v.$cyan);
+    }
+
+    input[type="submit"]{
+        @include m.boton(v.$cyan, v.$blanco);
+    }
+
+    .acciones{
+        a:hover{
+            color: v.$cyan;
+        }
+
+    }
+}
+
+/* NOTAS GENERALES
+
+1.- Forma para crear un gradiente, no en el fondo, sino en el texto. Para ello, Se pasa el gradiente al fondo, se establece que el color del texto sera transparente,
+y por ultimo, se especifica si el fondo de un elemento, ya sea el color o imagen, se extiende por debajo su borde con background-clip.
+
+2.- 
+*/

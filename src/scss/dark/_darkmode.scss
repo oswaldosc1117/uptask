@@ -1,0 +1,112 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+@media(prefers-color-scheme: dark){ // NG - 1.
+    $grisOscuro: #2c2c3b;
+    $grisInputs: #465263;
+
+    body{
+        background-color: $grisOscuro;
+    }
+
+    .tagline,
+    .formulario label,
+    .login .acciones a,
+    .acciones a{
+        color: v.$blanco;
+    }
+
+    .descripcion-pagina,
+    .formulario .campo input,
+    .contenido .nombre-pagina{
+        color: v.$blanco;
+    }
+
+    .formulario .campo input{
+        background-color: $grisInputs;
+
+        &::placeholder{
+            color: darken($color: v.$grisClaro, $amount: 20%);
+        }
+    }
+
+    .alerta.error{
+        background-color: lighten($color: #a90000, $amount: 65%);
+    }
+
+    .barra,
+    .barra-mobile{
+        background-color: darken($color: $grisOscuro, $amount: 7%);
+
+        p{
+            color: v.$blanco;
+        }
+    }
+
+    .filtros{
+        background-color: lighten($color: $grisOscuro, $amount: 8%);
+
+        h2, label{
+            color: v.$blanco;
+        }
+
+        // .campo input[type="radio"]{
+        //     accent-color: $grisOscuro; // NG - 2.
+        // }
+    }
+
+    .dashboard{
+        background-color: $grisOscuro;
+
+        .enlace{
+            color: v.$grisClaro;
+
+            &:hover{
+                color: v.$indigo;
+            }
+        }
+
+        .formulario .campo input{
+            background-color: $grisInputs;
+        }
+    }
+
+    .sidebar{
+        background-color: darken($color: $grisOscuro, $amount: 5%);
+    }
+
+    .sidebar.mostrar{
+        background-color: rgba($color: #000000, $alpha: .9);
+    }
+
+    .listado-proyectos .proyecto{
+        background-color: lighten($color: $grisOscuro, $amount: 20%);
+
+        a:hover{
+            color: $grisOscuro;
+        }
+    }
+
+    .listado-tareas .tarea p, 
+    .no-tareas{
+        color: v.$grisClaro;
+    }
+
+    .formulario.nueva-tarea{
+        background-color: $grisOscuro;
+
+        legend{
+            color: v.$grisClaro;
+        }
+    }
+}
+
+
+/* NOTAS GENERALES
+
+1.- @media(prefers-color-scheme: "preferencia") es una propiedad de SCSS para modificar el color de uno o mas elementos en funcion de las preferencias del sistema
+que tenga el usuario.
+
+2.- accent-color: #color; es una propiedad de CSS que permite modificarle el color a los radio-buttons
+
+*/
